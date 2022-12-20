@@ -9,6 +9,7 @@ import routeGolongan from "./routes/golongan.js";
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -22,7 +23,7 @@ db.connect((err) => {
   if (err) {
     throw err;
   }
-  app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
+  app.listen(PORT, () => {
+    console.log(`Server is up running on port ${PORT}`);
   });
 });
