@@ -9,8 +9,6 @@ import routeGolongan from "./routes/golongan.js";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
-
 
 app.use(cors());
 app.use(express.json());
@@ -21,6 +19,7 @@ app.use("/api/pegawai", routePegawai);
 app.use("/api/kinerja", routeKinerja);
 app.use("/api/golongan", routeGolongan);
 
+const PORT = process.env.PORT || 5000;
 db.connect((err) => {
   if (err) {
     throw err;
